@@ -41,4 +41,4 @@ coding!
 
   ...
 
--  Chanae Pickett: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+-  Chanae Pickett Scrum Master: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
