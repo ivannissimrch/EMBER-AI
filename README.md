@@ -35,7 +35,7 @@ your repo access and to practice PR'ing with your team _before_ you start
 coding!
 
 - Ivan Rebolledo Chavez (Developer): [GitHub](https://github.com/ivannissimrch) / [LinkedIn](https://www.linkedin.com/in/ivan-rebolledo-012b17244/)
-- Teammate name #1: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
+- Nate Kagnaw (Developer) : [GitHub](https://github.com/natnaelsisay) / [LinkedIn](https://www.linkedin.com/in/natnael-kagnaw/)
 - Teammate name #2: [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 
   ...
