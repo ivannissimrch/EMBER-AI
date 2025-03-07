@@ -37,7 +37,6 @@ coding!
 - Ivan Rebolledo Chavez (Developer): [GitHub](https://github.com/ivannissimrch) / [LinkedIn](https://www.linkedin.com/in/ivan-rebolledo-012b17244/)
 - Nate Kagnaw (Developer) : [GitHub](https://github.com/natnaelsisay) / [LinkedIn](https://www.linkedin.com/in/natnael-kagnaw/)
 - Vanshika Patel (UX/UI Developer): [GitHub](https://github.com/vanshika-99) / [LinkedIn](https://linkedin.com/in/vanshikapatel)
-  : [GitHub](https://github.com/ghaccountname) / [LinkedIn](https://linkedin.com/in/liaccountname)
 - Bryan Hoyem (Developer): [GitHub](https://github.com/bhoyem) / [LinkedIn](https://www.linkedin.com/in/bhoyem/) 
   ...
 
