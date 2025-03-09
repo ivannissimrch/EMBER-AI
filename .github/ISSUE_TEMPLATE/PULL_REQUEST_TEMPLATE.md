@@ -25,3 +25,9 @@ request, helping reviewers validate the code. -->
 ## Screenshots (if applicable)
 
 <!-- Add screenshots here to demonstrate the UI changes.-->
+
+## Added Tests?
+
+- [ ] yes
+- [ ] no
+- [ ] separate PR
