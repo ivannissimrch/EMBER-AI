@@ -38,7 +38,6 @@ coding!
 - Nate Kagnaw (Developer) : [GitHub](https://github.com/natnaelsisay) / [LinkedIn](https://www.linkedin.com/in/natnael-kagnaw/)
 - Vanshika Patel (UX/UI Developer): [GitHub](https://github.com/vanshika-99) / [LinkedIn](https://linkedin.com/in/vanshikapatel)
 - Bryan Hoyem (Developer): [GitHub](https://github.com/bhoyem) / [LinkedIn](https://www.linkedin.com/in/bhoyem/)
-- Kento Kanehira (Developer): [GitHub](https://github.com/kento-ix) / [LinkedIn](https://www.linkedin.com/in/kento-kanehira-ixx/) 
-  ...
+- Kento Kanehira (Developer): [GitHub](https://github.com/kento-ix) / [LinkedIn](https://www.linkedin.com/in/kento-kanehira-ixx/)
 
--  Chanae Pickett Scrum Master: [GitHub](https://github.com/chanaelynease) / [LinkedIn](https://linkedin.com/in/chanaepickett)
+- Chanae Pickett Scrum Master: [GitHub](https://github.com/chanaelynease) / [LinkedIn](https://linkedin.com/in/chanaepickett)
