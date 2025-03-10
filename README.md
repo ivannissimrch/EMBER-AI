@@ -42,3 +42,4 @@ coding!
 - Olivia Cameron (Developer): [GitHub](https://www.github.com/olivcamj) / [LinkedIn](https://www.linkedin.com/in/olivia-cameronj)
 - Chanae Pickett Scrum Master: [GitHub](https://github.com/chanaelynease) / [LinkedIn](https://linkedin.com/in/chanaepickett)
 - Jennifer Alexander Voyage Guide: [GitHub](https://github.com/jenny-alexander) / [LinkedIn](https://www.linkedin.com/in/jenny-alexander/)
+- Lindsay Allen (Developer): [GitHub](https://github.com/lkallen) / [LinkedIn](https://www.linkedin.com/in/lindsay-allen-54b46937/)
