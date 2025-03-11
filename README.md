@@ -66,9 +66,16 @@ coding!
 
 - Chanae Pickett Scrum Master: [GitHub](https://github.com/chanaelynease) / [LinkedIn](https://linkedin.com/in/chanaepickett)
 
+### Voyage Guide
+
+- Jennifer Alexander Voyage Guide: [GitHub](https://github.com/jenny-alexander) / [LinkedIn](https://www.linkedin.com/in/jenny-alexander/)
+
 ### Developers
 
 - Ivan Rebolledo Chavez (Developer): [GitHub](https://github.com/ivannissimrch) / [LinkedIn](https://www.linkedin.com/in/ivan-rebolledo-012b17244/)
 - Nate Kagnaw (Developer) : [GitHub](https://github.com/natnaelsisay) / [LinkedIn](https://www.linkedin.com/in/natnael-kagnaw/)
 - Bryan Hoyem (Developer): [GitHub](https://github.com/bhoyem) / [LinkedIn](https://www.linkedin.com/in/bhoyem/)
 - Kento Kanehira (Developer): [GitHub](https://github.com/kento-ix) / [LinkedIn](https://www.linkedin.com/in/kento-kanehira-ixx/)
+- Olivia Cameron (Developer): [GitHub](https://www.github.com/olivcamj) / [LinkedIn](https://www.linkedin.com/in/olivia-cameronj)
+- Lindsay Allen (Developer): [GitHub](https://github.com/lkallen) / [LinkedIn](https://www.linkedin.com/in/lindsay-allen-54b46937/)
+
