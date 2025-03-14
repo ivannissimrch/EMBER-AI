@@ -78,4 +78,3 @@ coding!
 - Kento Kanehira (Developer): [GitHub](https://github.com/kento-ix) / [LinkedIn](https://www.linkedin.com/in/kento-kanehira-ixx/)
 - Olivia Cameron (Developer): [GitHub](https://www.github.com/olivcamj) / [LinkedIn](https://www.linkedin.com/in/olivia-cameronj)
 - Lindsay Allen (Developer): [GitHub](https://github.com/lkallen) / [LinkedIn](https://www.linkedin.com/in/lindsay-allen-54b46937/)
-
