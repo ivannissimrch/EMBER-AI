@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import Image from "next/image";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +24,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="en" className="h-screen bg-white">
+      <body className="h-full bg-green-400 grid grid-cols-[repeat(12,_1fr)] grid-rows-[repeat(12,_1fr)] gap-x-[0px] gap-y-[0px]">
+        <header className="bg-white text-black [grid-area:1_/_1_/_2_/_13] flex items-center ">
+          <Link href={"/"}>
+            <h1 className="text-[#E26310] font-[Poppins] text-[22px] not-italic font-semibold leading-[normal]  pl-[31px]">
+              Logo
+            </h1>
+          </Link>
+          <Link href={"AboutUs"}>
+            <h2 className="text-[#61529D] font-[Helvetica_Neue] text-[20px] not-italic font-medium leading-[24px] ml-[89PX]">
+              ABOUT US
+            </h2>
+          </Link>
+        </header>
+        <main className="[grid-area:2_/_1_/_12_/_13] bg-white">{children}</main>
+        <footer className="bg-[hsla(212,_50%,_87%,_1)] text-black [grid-area:12_/_1_/_13_/_13] flex items-end pl-[31px] justify-evenly pb-[7px]">
+          <Link
+            className=" w-[10%]"
+            href="https://github.com/chingu-voyages/V54-tier2-team-23"
+          >
+            <Image
+              src="images/githubIcon.svg"
+              alt="location icon"
+              width={45}
+              height={45}
+            />
+          </Link>
+          <p className=" font-[Bitter] text-[26px] not-italic font-normal leading-[normal] w-[80%] flex justify-center">
+            ©2025 Ember AI. All Rights Reserved
+          </p>
+          <div className=" w-[10%]"></div>
+        </footer>
       </body>
     </html>
   );
