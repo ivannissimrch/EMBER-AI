@@ -18,7 +18,7 @@ export default function Home() {
 				</div>
 
 				<div className="w-1/2 flex justify-center items-center">
-					<h2>Logo</h2>
+					<h2 className="font-[Poppins] text-4xl">logo</h2>
 				</div>
 			</div>
 		</section>
