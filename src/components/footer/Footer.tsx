@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Footer() {
 	return (
-		<footer className="bg-[hsla(212,_50%,_87%,_1)] text-black [grid-area:12_/_1_/_13_/_13] flex items-center pl-[31px] justify-center pb-[7px] gap-2">
+		<footer className="bg-[#C7C7C7] text-black [grid-area:12_/_1_/_13_/_13] flex items-center pl-[31px] justify-center gap-2">
 			<Link
 				className=""
 				href="https://github.com/chingu-voyages/V54-tier2-team-23"

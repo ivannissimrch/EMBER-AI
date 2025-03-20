@@ -12,8 +12,8 @@ export default function Home() {
 						nam? Voluptate beatae exercitationem tempora officia molestias
 						expedita repellat non cupiditate.
 					</p>
-					<button className="mt-[31px] w-[245px] h-[60px] bg-gray-300 rounded-4xl">
-						Start
+					<button className="mt-[31px] w-[245px] h-[60px] bg-[#C7C7C7] rounded-4xl text-[24px]">
+						Try it out
 					</button>
 				</div>
 
