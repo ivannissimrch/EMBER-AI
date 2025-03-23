@@ -36,7 +36,7 @@ Meeting Agenda templates (located in the `/docs` directory in this repo):
 
 ### 🌐 Live version
 
-- [Link](https://www.goggle.com)
+- [Link](https://ember-ai.vercel.app/)
 
 ### 📂 From the repo
 
