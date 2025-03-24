@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Review() {
   return (
     <section className="text-black flex flex-col items-center h-full overflow-y-auto">
@@ -6,7 +8,9 @@ export default function Review() {
       </h1>
 
       <section className="flex flex-col mt-[58px]">
-        <button className="">Back</button>
+        <Link
+        href="/promptInput"
+        >Back</Link>
         <div className="flex flex-col mt-[62px]  bg-gray-300  rounded-4xl">
           <textarea className="w-[1080px] h-[326px]  p-[40px]" />
           <button>Edit Prompt Area</button>
