@@ -1,7 +1,11 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 import { Inputs } from "@/app/promptInput/page";
 export default function Form({ inputs }: { inputs: Inputs[] }) {
+  const router = useRouter()
+
   function scrollToComponent(input: Inputs, idx: number) {
     inputs[idx + 1].inputRef.current?.scrollIntoView({
       behavior: "smooth",
@@ -49,8 +53,10 @@ export default function Form({ inputs }: { inputs: Inputs[] }) {
                 </button>
               </div>
             ) : (
-              <button className=" w-1/2 p-4 m-2 h-12  text-black underline">
-                ReView
+              <button className="cursor-pointer w-1/2 p-4 m-2 h-12  text-black underline"
+              onClick={() => router.push('/review')}
+              >
+                Review
               </button>
             )}
           </div>
