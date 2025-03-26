@@ -1,32 +1,45 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
 import { Inputs } from "@/app/promptInput/page";
-export default function Form({ inputs }: { inputs: Inputs[] }) {
-  const router = useRouter()
+import { FormEvent } from "react";
+import NavigationButtons from "../navigationButtons/NavigationButtons";
+import AnimationContainer from "../animationContainer/AnimationContainer";
 
-  function scrollToComponent(input: Inputs, idx: number) {
+interface FormProps {
+  inputs: Inputs[];
+  activeStep: number;
+  handleNext: () => void;
+  handleBack: () => void;
+  handleReset: () => void;
+}
+
+export default function Form({ inputs, handleNext, handleBack }: FormProps) {
+  function scrollToNextComponent(input: Inputs, idx: number) {
     inputs[idx + 1].inputRef.current?.scrollIntoView({
       behavior: "smooth",
     });
+    handleNext();
+  }
+
+  function scrollToPrevComponent(input: Inputs, idx: number) {
+    inputs[idx - 1].inputRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+    handleBack();
+  }
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
   }
 
   return (
     <form
-      onSubmit={async (event) => {
-        event?.preventDefault();
-      }}
+      onSubmit={handleSubmit}
       className="flex flex-col  w-full  p-10 items-center"
     >
+      {/* Form Sections */}
       {inputs.map((input, idx) => (
-        <div
-          key={input.title}
-          className={`${
-            idx === 0 ? "h-[40vh]" : "h-[50vh]"
-          } w-full flex flex-col justify-center`}
-          ref={input.inputRef}
-        >
+        <AnimationContainer key={input.title} input={input} idx={idx}>
           <div className="flex flex-col items-center text-black">
             <label className="bg-white  m-2">{input.title}</label>
             <input
@@ -36,31 +49,15 @@ export default function Form({ inputs }: { inputs: Inputs[] }) {
               className="p-4 bg-[#CAD2C5] w-1/2 flex"
               placeholder={input.title}
             />
-            {idx < inputs.length - 1 ? (
-              <div className="w-1/2 flex justify-evenly">
-                <button
-                  className={`${idx === 0 ? "hidden" : "visible"}`}
-                  type="button"
-                  onClick={() => scrollToComponent(input, idx)}
-                >
-                  Back
-                </button>
-                <button
-                  type="button"
-                  onClick={() => scrollToComponent(input, idx)}
-                >
-                  Next
-                </button>
-              </div>
-            ) : (
-              <button className="cursor-pointer w-1/2 p-4 m-2 h-12  text-black underline"
-              onClick={() => router.push('/review')}
-              >
-                Review
-              </button>
-            )}
+            {/* Buttons */}
+            <NavigationButtons
+              idx={idx}
+              scrollToNextComponent={scrollToNextComponent}
+              scrollToPrevComponent={scrollToPrevComponent}
+              input={input}
+            />
           </div>
-        </div>
+        </AnimationContainer>
       ))}
     </form>
   );

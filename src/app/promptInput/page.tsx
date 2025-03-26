@@ -1,7 +1,7 @@
 "use client";
 
 import Form from "@/components/form/Form";
-import { RefObject, useRef } from "react";
+import { RefObject, useRef, useState } from "react";
 
 export interface Inputs {
   title: string;
@@ -22,13 +22,34 @@ export default function PromptInput() {
     { title: "Output", inputRef: outputRef },
     { title: "Constrain", inputRef: constrainRef },
   ];
+  //add state to handle active step.
+  const [activeStep, setActiveStep] = useState(0);
+
+  function handleNext() {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  }
+
+  function handleBack() {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  }
+
+  function handleReset() {
+    setActiveStep(0);
+  }
+
   return (
-    <div className="h-full border-white overflow-y-scroll">
+    <div className="h-full border-white overflow-y-hidden">
       <header className="bg-white text-black  mx-auto w-full px-4 py-6 sm:px-6 lg:px-8 absolute flex justify-center ">
-        Stepper - Breadcrumbs - Breadcrumbs
+        O-O-O-O-O
       </header>
       <main className="">
-        <Form inputs={inputs} />
+        <Form
+          inputs={inputs}
+          activeStep={activeStep}
+          handleNext={handleNext}
+          handleBack={handleBack}
+          handleReset={handleReset}
+        />
       </main>
     </div>
   );
