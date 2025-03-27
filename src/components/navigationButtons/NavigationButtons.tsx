@@ -1,19 +1,16 @@
-import { Inputs } from "@/app/promptInput/page";
+import { Inputs, useStoreContext } from "@/app/helpers/StoreContext";
 import Link from "next/link";
 
 interface NavigationButtonsProps {
   idx: number;
-  scrollToNextComponent: (input: Inputs, idx: number) => void;
-  scrollToPrevComponent: (input: Inputs, idx: number) => void;
   input: Inputs;
 }
 
 export default function NavigationButtons({
   idx,
-  scrollToNextComponent,
-  scrollToPrevComponent,
   input,
 }: NavigationButtonsProps) {
+  const { scrollToNextComponent, scrollToPrevComponent } = useStoreContext();
   const FIRST_INPUT_INDEX = 0;
   const LAST_INPUT_INDEX = 4;
   function NextButton({ input, idx }: { input: Inputs; idx: number }) {
