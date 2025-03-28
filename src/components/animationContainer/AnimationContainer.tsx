@@ -1,4 +1,4 @@
-import { Inputs } from "@/app/promptInput/page";
+import { Inputs } from "@/app/helpers/StoreContext";
 import { easeInOut } from "motion";
 import { motion } from "motion/react";
 

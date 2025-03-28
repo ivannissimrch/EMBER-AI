@@ -103,11 +103,14 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }
 
   function scrollToNextComponent(input: Inputs, idx: number) {
-    const nextInput = storeValue.inputValues[idx + 1].inputRef.current;
-    if (nextInput) {
-      nextInput.scrollIntoView({
-        behavior: "smooth",
-      });
+    if (idx < storeValue.inputValues.length - 1) {
+      const nextInput = storeValue.inputValues[idx + 1].inputRef.current;
+      if (nextInput) {
+        nextInput.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }
     }
   }
 
@@ -116,6 +119,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     if (prevInput) {
       prevInput.scrollIntoView({
         behavior: "smooth",
+        block: "center",
       });
     }
   }
