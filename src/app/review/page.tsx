@@ -20,6 +20,7 @@ export default function Review() {
         <div className="flex flex-col mt-[62px]  bg-gray-300  rounded-4xl">
           <textarea className="w-[1080px] h-[326px]  p-[40px]" 
                     value={combineInputs}
+                    onChange={(e) => console.log(e.target.value)}
           />
           <button>Edit Prompt Area</button>
         </div>
