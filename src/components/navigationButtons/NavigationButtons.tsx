@@ -1,5 +1,7 @@
 import { Inputs, useStoreContext } from "@/app/helpers/StoreContext";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import AlertMessage from "../alertMessage/AlertMessage";
+import { useState } from "react";
 
 interface NavigationButtonsProps {
   idx: number;
@@ -10,18 +12,33 @@ export default function NavigationButtons({
   idx,
   input,
 }: NavigationButtonsProps) {
+  const [showAlert, setShowAlert] = useState(false);
+  const router = useRouter();
   const { scrollToNextComponent, scrollToPrevComponent } = useStoreContext();
   const FIRST_INPUT_INDEX = 0;
   const LAST_INPUT_INDEX = 4;
+
+  function closeAlert() {
+    setShowAlert(false);
+  }
   function NextButton({ input, idx }: { input: Inputs; idx: number }) {
     return (
-      <button
-        className="w-1/4 mt-4 flex justify-end bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        type="button"
-        onClick={() => scrollToNextComponent(input, idx)}
-      >
-        Next
-      </button>
+      <>
+        <button
+          className="w-1/4 mt-4 flex justify-end bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          type="button"
+          onClick={() => {
+            if (input.question === "") {
+              setShowAlert(true);
+              return;
+            }
+            scrollToNextComponent(input, idx);
+          }}
+        >
+          Next
+        </button>
+        <AlertMessage showAlert={showAlert} closeAlert={closeAlert} />
+      </>
     );
   }
 
@@ -32,7 +49,9 @@ export default function NavigationButtons({
           idx === 0 ? "hidden" : "visible"
         } w-1/4 flex justify-start bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4`}
         type="button"
-        onClick={() => scrollToPrevComponent(input, idx)}
+        onClick={() => {
+          scrollToPrevComponent(input, idx);
+        }}
       >
         Back
       </button>
@@ -41,12 +60,18 @@ export default function NavigationButtons({
 
   function ReviewButton() {
     return (
-      <Link
-        href="review"
+      <button
+        onClick={() => {
+          if (input.question === "") {
+            alert("please enter some text");
+            return;
+          }
+          router.push("/review");
+        }}
         className="flex w-full justify-end p-4 m-2 h-12  text-black underline"
       >
         ReView
-      </Link>
+      </button>
     );
   }
 
