@@ -7,6 +7,7 @@
   --foreground: #171717;
   --custom-orange: #e26310;
   --custom-background: #ffede2;
+  --custom-purple: #61529d;
 }
 
 @theme inline {
@@ -16,6 +17,7 @@
   --font-mono: var(--font-geist-mono);
   --color-custom-orange: var(--custom-orange);
   --color-custom-background: var(--custom-background);
+  --color-custom-purple: var(--custom-purple);
 }
 
 @media (prefers-color-scheme: dark) {
