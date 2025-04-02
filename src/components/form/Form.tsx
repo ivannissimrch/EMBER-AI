@@ -3,6 +3,7 @@ import { FormEvent, useRef, useState } from "react";
 import NavigationButtons from "../navigationButtons/NavigationButtons";
 import AnimationContainer from "../animationContainer/AnimationContainer";
 import { useStoreContext } from "@/app/helpers/StoreContext";
+import ResetButton from "../buttons/ResetButton";
 
 export default function Form() {
   const {
@@ -57,8 +58,9 @@ export default function Form() {
               className="p-4 bg-[#CAD2C5] w-1/2 flex"
               placeholder={input.title}
             />
+
             <button type="button" onClick={() => clearInputValue(input.id)}>
-              clear
+              <ResetButton />
             </button>
             {/* Buttons */}
             <NavigationButtons idx={idx} input={input} />
