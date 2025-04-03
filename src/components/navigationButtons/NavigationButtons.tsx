@@ -1,108 +1,68 @@
-import { Inputs, useStoreContext } from "@/app/helpers/StoreContext";
-import { useRouter } from "next/navigation";
-import AlertMessage from "../alertMessage/AlertMessage";
-import { useState } from "react";
+import Link from 'next/link';
 
 interface NavigationButtonsProps {
-  handleNext: any;
-  handleBack: any;
-  idx: number;
-  input: Inputs;
+    idx: number;
+    setActiveInput: Function;
 }
 
-export default function NavigationButtons({
-  handleNext, 
-  handleBack,
-  idx,
-  input,
-}: NavigationButtonsProps) {
-  const [showAlert, setShowAlert] = useState(false);
-  const router = useRouter();
-  const { scrollToNextComponent, scrollToPrevComponent } = useStoreContext();
-  const FIRST_INPUT_INDEX = 0;
-  const LAST_INPUT_INDEX = 4;
+export default function NavigationButtons({ idx, setActiveInput }: NavigationButtonsProps) {
+    const changeInput = (index: number) => {
+        if (index < 0) return;
+        if (index > 5) return;
+        setActiveInput(index);
+    };
 
-  function closeAlert() {
-    setShowAlert(false);
-  }
-  function NextButton({ input, idx }: { input: Inputs; idx: number }) {
     return (
-      <>
+        <div>
+            <div className="flex justify-between">
+                {idx > 0 ? (
+                    <ButtonDirection
+                        text="Back"
+                        active={idx > 0}
+                        onClick={() => changeInput(idx - 1)}
+                    />
+                ) : (
+                    <span></span>
+                )}
+
+                {idx < 4 && (
+                    <ButtonDirection
+                        text="Next"
+                        active={idx < 4}
+                        onClick={() => changeInput(idx + 1)}
+                    />
+                )}
+            </div>
+            <div className="flex justify-center mt-2">
+                {idx == 4 && (
+                    <Link
+                        href="/review"
+                        className="flex justify-center items-center px-16 rounded-4xl py-2  h-12 bg-[#61529D] text-white  cursor-pointer"
+                    >
+                        Review
+                    </Link>
+                )}
+            </div>
+        </div>
+    );
+}
+
+interface ButtonDirectionType {
+    text: string;
+    active: boolean;
+    onClick: () => void;
+}
+
+function ButtonDirection({ text, active, onClick }: ButtonDirectionType) {
+    return (
         <button
-          className="w-1/4 mt-4 flex justify-end bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          type="button"
-          onClick={() => {
-            if (input.question === "") {
-              setShowAlert(true);
-              return;
-            }
-            console.log(idx); //temporarily here for troubleshooting purposes
-            // handleNext(idx);
-            scrollToNextComponent(input, idx);
-          }}
+            className={`mt-4 flex justify-end   text-white font-bold py-2 px-10 rounded-4xl ${
+                active ? 'bg-[#61529D] hover:bg-[#7163aa] cursor-pointer' : 'bg-blue-100'
+            }`}
+            onClick={onClick}
+            disabled={!active}
         >
-          Next
+            {text}
         </button>
-        <AlertMessage showAlert={showAlert} closeAlert={closeAlert} />
-      </>
     );
-  }
-
-  function BackButton({ input, idx }: { input: Inputs; idx: number }) {
-    return (
-      <button
-        className={`${
-          idx === 0 ? "hidden" : "visible"
-        } w-1/4 flex justify-start bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4`}
-        type="button"
-        onClick={() => {
-          console.log(idx); //temp line for troubleshooting
-          handleBack(idx);
-          scrollToPrevComponent(input, idx);
-        }}
-      >
-        Back
-      </button>
-    );
-  }
-
-  function ReviewButton() {
-    return (
-      <button
-        onClick={() => {
-          if (input.question === "") {
-            alert("please enter some text");
-            return;
-          }
-          router.push("/review");
-        }}
-        className="flex w-full justify-end p-4 m-2 h-12  text-black underline"
-      >
-        ReView
-      </button>
-    );
-  }
-
-  return idx === FIRST_INPUT_INDEX ? (
-    <div className="w-1/2 flex justify-evenly">
-      <div className=" w-full flex ">
-        <button>Inspire Me</button>
-      </div>
-
-      <NextButton idx={idx} input={input} />
-    </div>
-  ) : idx === LAST_INPUT_INDEX ? (
-    <div className=" w-1/2">
-      <BackButton idx={idx} input={input} /> <ReviewButton />{" "}
-    </div>
-  ) : (
-    <div className="w-1/2 flex justify-evenly">
-      <div className=" w-full flex ">
-        <BackButton idx={idx} input={input} />
-      </div>
-      <div className="flex justify-end w-full">
-        <NextButton idx={idx} input={input} />
-      </div>
-    </div>
-  );
 }

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import Form from "@/components/form/Form";
+import Form from '@/components/form/Form';
 import Box from "@mui/material/Box"
 
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
@@ -10,6 +10,7 @@ export interface Inputs {
   title: string;
   inputRef: RefObject<HTMLDivElement | null>;
 }
+
 
 export default function PromptInput() {
   const personaRef = useRef<HTMLDivElement | null>(null);
@@ -44,23 +45,21 @@ export default function PromptInput() {
     console.log("Step clicked:", index);
   }
 
-  return (
-    <div className="h-full border-white overflow-y-hidden">
-      <header className="bg-white text-black  mx-auto w-full px-4 py-6 sm:px-6 lg:px-8 absolute flex justify-center ">
-        <Breadcrumbs
-          steps={inputs.map((input) => input.title)} // ["Persona", "Context", ....]
-          activeStep={activeStep} // 0 -> 1 -> 2
-          handleNext={handleNext}
-          handleBack={handleBack}
-          handleReset={handleReset}
-          handleStepperClick={handleStepperClick}
-        />      
-      </header>
-      <main className="">
-        <Form 
-        handleBack={handleBack}
-        />
-      </main>
-    </div>
-  );
+    return (
+        <div className="h-full ">
+            <header className="bg-white text-black  mx-auto w-full px-4 py-6 sm:px-6 lg:px-8 absolute flex justify-center ">
+            <Breadcrumbs
+              steps={inputs.map((input) => input.title)} // ["Persona", "Context", ....]
+              activeStep={activeStep} // 0 -> 1 -> 2
+              handleNext={handleNext}
+              handleBack={handleBack}
+              handleReset={handleReset}
+              handleStepperClick={handleStepperClick}
+            />      
+          </header>
+            <main className=" ">
+                <Form activeInput={activeStep} setActiveInput={setActiveStep} />
+            </main>
+        </div>
+    );
 }
