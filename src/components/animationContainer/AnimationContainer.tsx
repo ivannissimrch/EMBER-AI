@@ -1,4 +1,3 @@
-import { Inputs } from '@/app/helpers/StoreContext';
 import { easeInOut } from 'motion';
 import { motion } from 'motion/react';
 
@@ -14,23 +13,18 @@ const variants = {
 
 interface AnimationProps {
     children: React.ReactNode;
-    input: Inputs;
-    idx: number;
+    key: number;
 }
 
-export default function AnimationContainer({ children, input, idx }: AnimationProps) {
+export default function AnimationContainer({ children, key }: AnimationProps) {
     return (
         <motion.div
-            key={input.title}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }}
             variants={variants}
-            //   className={`${
-            //     idx === 0 ? "h-[90vh]" : "h-[100vh]"
-            //   } w-full flex flex-col justify-center`}
-            className="w-full border"
-            ref={input.inputRef}
+            key={key}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            className="w-full"
         >
             {children}
         </motion.div>

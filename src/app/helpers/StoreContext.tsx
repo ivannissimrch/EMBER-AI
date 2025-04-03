@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 export interface Inputs {
     id: string;
     title: string;
+    description: string;
     question: string;
     inputRef: RefObject<HTMLDivElement | null>;
 }
@@ -120,31 +121,36 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         inputValues: [
             {
                 id: 'q1',
-                title: 'Describe who the result will be tailored for',
+                title: 'Persona',
+                description: 'Describe who the result will be tailored for',
                 question: '',
                 inputRef: personaRef,
             },
             {
                 id: 'q2',
-                title: 'Provide background information',
+                title: 'Context',
+                description: 'Provide background information',
                 question: '',
                 inputRef: contextRef,
             },
             {
                 id: 'q3',
-                title: 'Provide information needed.',
+                title: 'Task',
+                description: 'Provide information needed.',
                 question: '',
                 inputRef: taskRef,
             },
             {
                 id: 'q4',
-                title: 'Defines how you want the AI tool to respond',
+                title: 'Output',
+                description: 'Defines how you want the AI tool to respond',
                 question: '',
                 inputRef: outputRef,
             },
             {
                 id: 'q5',
-                title: 'Provide  boundaries',
+                title: 'Boundaries',
+                description: 'Provide  boundaries',
                 question: '',
                 inputRef: constrainRef,
             },
