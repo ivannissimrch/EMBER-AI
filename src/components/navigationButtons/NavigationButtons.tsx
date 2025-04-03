@@ -9,6 +9,7 @@ interface NavigationButtonsProps {
 }
 
 export default function NavigationButtons({
+  handleBack,
   idx,
   input,
 }: NavigationButtonsProps) {
@@ -51,6 +52,8 @@ export default function NavigationButtons({
         } w-1/4 flex justify-start bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4`}
         type="button"
         onClick={() => {
+          console.log(idx); //temp line for troubleshooting
+          handleBack(idx);
           scrollToPrevComponent(input, idx);
         }}
       >

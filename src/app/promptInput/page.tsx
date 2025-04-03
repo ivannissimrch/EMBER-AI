@@ -1,6 +1,8 @@
 "use client";
 
 import Form from "@/components/form/Form";
+import Box from "@mui/material/Box"
+
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import { RefObject, useRef, useState } from "react";
 
@@ -30,8 +32,9 @@ export default function PromptInput() {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     console.log("handleNext used, idx:", idx);
   }
-  function handleBack() {
+  function handleBack(idx: number) {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    console.log("handleBack used, idx:", idx);
   }
   function handleReset() {
     setActiveStep(0);
@@ -54,7 +57,9 @@ export default function PromptInput() {
         />      
       </header>
       <main className="">
-        <Form />
+        <Form 
+        handleBack={handleBack}
+        />
       </main>
     </div>
   );

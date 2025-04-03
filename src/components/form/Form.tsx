@@ -5,7 +5,8 @@ import AnimationContainer from "../animationContainer/AnimationContainer";
 import { useStoreContext } from "@/app/helpers/StoreContext";
 import ResetButton from "../buttons/ResetButton";
 
-export default function Form() {
+export default function Form({handleBack}) {
+  
   const {
     storeValue,
     updateInputsValues,
@@ -64,7 +65,7 @@ export default function Form() {
               <ResetButton />
             </button>
             {/* Buttons */}
-            <NavigationButtons idx={idx} input={input} />
+            <NavigationButtons idx={idx} input={input} handleBack={handleBack} />
           </div>
         </AnimationContainer>
       ))}
