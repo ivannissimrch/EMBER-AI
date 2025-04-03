@@ -27,6 +27,7 @@ export default function Form() {
       onSubmit={handleSubmit}
       className="flex flex-col  w-full  p-10 items-center"
     >
+      {console.log("storeValue:",storeValue)} //temporarily adding this line for troubleshooting
       {/* Form Sections */}
       {storeValue.inputValues.map((input, idx) => (
         <AnimationContainer key={input.title} input={input} idx={idx}>

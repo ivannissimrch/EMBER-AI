@@ -32,6 +32,7 @@ export default function NavigationButtons({
               setShowAlert(true);
               return;
             }
+            console.log(idx); //temporarily here for troubleshooting purposes
             scrollToNextComponent(input, idx);
           }}
         >
