@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 interface NavigationButtonsProps {
     idx: number;
-    setActiveInput: (index: number) => void;
+    setActiveInput: Function;
 }
 
 export default function NavigationButtons({ idx, setActiveInput }: NavigationButtonsProps) {

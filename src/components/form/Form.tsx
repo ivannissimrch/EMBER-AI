@@ -7,14 +7,15 @@ import ResetButton from '../buttons/ResetButton';
 import NavigationButtons from '../navigationButtons/NavigationButtons';
 import AnimationContainer from '../animationContainer/AnimationContainer';
 
-export default function Form() {
+
+export default function Form({activeInput, setActiveInput}: {activeInput: number, setActiveInput: Function}) {
     const { storeValue, updateInputsValues } = useStoreContext();
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
     }
 
-    const [activeInput, setActiveInput] = useState(0);
+    // const [activeInput, setActiveInput] = useState(0);
     const inputField = storeValue.inputValues[activeInput];
 
     return (
