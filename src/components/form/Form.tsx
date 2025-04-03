@@ -5,7 +5,10 @@ import AnimationContainer from "../animationContainer/AnimationContainer";
 import { useStoreContext } from "@/app/helpers/StoreContext";
 import ResetButton from "../buttons/ResetButton";
 
-export default function Form({handleBack}) {
+export default function Form({
+  handleNext, 
+  handleBack
+}) {
   
   const {
     storeValue,
@@ -28,7 +31,6 @@ export default function Form({handleBack}) {
       onSubmit={handleSubmit}
       className="flex flex-col  w-full  p-10 items-center"
     >
-      {console.log("storeValue:",storeValue)} //temporarily adding this line for troubleshooting
       {/* Form Sections */}
       {storeValue.inputValues.map((input, idx) => (
         <AnimationContainer key={input.title} input={input} idx={idx}>
@@ -65,7 +67,7 @@ export default function Form({handleBack}) {
               <ResetButton />
             </button>
             {/* Buttons */}
-            <NavigationButtons idx={idx} input={input} handleBack={handleBack} />
+            <NavigationButtons idx={idx} input={input} handleBack={handleBack} handleNext={handleNext} />
           </div>
         </AnimationContainer>
       ))}

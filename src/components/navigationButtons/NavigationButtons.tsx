@@ -4,11 +4,14 @@ import AlertMessage from "../alertMessage/AlertMessage";
 import { useState } from "react";
 
 interface NavigationButtonsProps {
+  handleNext: any;
+  handleBack: any;
   idx: number;
   input: Inputs;
 }
 
 export default function NavigationButtons({
+  handleNext, 
   handleBack,
   idx,
   input,
@@ -34,6 +37,7 @@ export default function NavigationButtons({
               return;
             }
             console.log(idx); //temporarily here for troubleshooting purposes
+            // handleNext(idx);
             scrollToNextComponent(input, idx);
           }}
         >
