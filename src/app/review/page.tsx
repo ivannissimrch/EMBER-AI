@@ -1,22 +1,30 @@
 'use client';
+
 import { useEffect, useState } from 'react';
-import { useStoreContext } from '../helpers/StoreContext';
 import Link from 'next/link';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+
 import { generateResponse } from '@/util/api';
+import { useStoreContext } from '../helpers/StoreContext';
+import { ButtonDirection } from '@/components/buttons/ButtonDirection';
 
 export default function Review() {
     const { storeValue } = useStoreContext();
 
-    const [combineInputs, setCombileInputs] = useState<string>('');
+    const [combineInputs, setCombineInputs] = useState<string>('');
     const [disabled, setDisabled] = useState<boolean>(true);
-    const [geminiResonse, setGeminiResponse] = useState<string>('');
+    const [geminiResponse, setGeminiResponse] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
 
     useEffect(() => {
-        const result = storeValue.inputValues.map((input) => input.question).join('\n');
-        setCombileInputs(result);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+        const result = storeValue.inputValues
+            .map((input) => input.question)
+            .filter((input) => input.length > 0)
+            .join('\n');
+        setCombineInputs(result);
+    }, [storeValue.inputValues]);
 
     const handleSubmit = async () => {
         setLoading(true);
@@ -26,43 +34,56 @@ export default function Review() {
     };
 
     return (
-        <section className="text-black flex flex-col items-center h-full overflow-y-auto">
-            <h1 className="mt-[49px] text-[36px] font-[Open_Sans] font-normal leading-[normal]">
-                Prompt Review
-            </h1>
+        <section className="text-black flex flex-col items-center h-full overflow-y-auto container">
+            <section className="flex flex-col mt-[58px] w-full">
+                <Link href="/promptInput" className="underline">
+                    Back
+                </Link>
 
-            <section className="flex flex-col mt-[58px]">
-                <Link href="/promptInput">Back</Link>
-                <div className="flex flex-col mt-[62px]  bg-gray-300  rounded-4xl">
+                <h3 className="mt-8 font-bold mb-2">Preview your prompt</h3>
+                <div className="flex flex-col items-start p-2  bg-gray-300  rounded-2xl w-full">
                     <textarea
                         disabled={disabled}
-                        className={`w-[1080px] h-[326px]  p-[40px] ${
-                            disabled ? 'text-gray-400' : 'text-black'
+                        className={`w-full h-[326px] rounded-md p-2 ${
+                            disabled ? 'text-gray-400' : 'text-black border-1 border-amber-50'
                         }`}
                         value={combineInputs}
-                        onChange={(e) => setCombileInputs(e.target.value)}
+                        onChange={(e) => setCombineInputs(e.target.value)}
                     />
-                    <button onClick={() => setDisabled(!disabled)} className="p-2 cursor-pointer">
-                        Edit Prompt Area
-                    </button>
+                    <div
+                        className={`p-2 cursor-pointer  rounded-md mt-2 text-xs ${
+                            disabled ? 'bg-gray-400 text-white' : ''
+                        }`}
+                    >
+                        <FontAwesomeIcon icon={faPenToSquare} />
+
+                        <button
+                            onClick={() => setDisabled(!disabled)}
+                            className="px-1 cursor-pointer "
+                        >
+                            Edit Prompt
+                        </button>
+                    </div>
                 </div>
             </section>
 
-            <button
-                className="mt-[80px] w-[245px] h-[60px] bg-gray-300 cursor-pointer"
-                onClick={handleSubmit}
-            >
-                Generate Prompt
-            </button>
+            <ButtonDirection active={true} text="Generate Result" onClick={handleSubmit} />
 
-            <div className="flex flex-col my-[62px] ">
-                <h3 className="mb-4">Ember Response</h3>
-                <div className=" w-[1080px] p-4 bg-gray-300  rounded-4xl">
-                    {geminiResonse ? (
-                        <p>{geminiResonse}</p>
-                    ) : (
-                        <p>{loading ? 'Loading..' : 'Ask your question in the prompt'}</p>
-                    )}
+            <div className="flex flex-col my-[62px] w-full ">
+                <h3 className="mt-8 font-bold mb-2">Result</h3>
+                <div className=" w-full min-h-[126px] p-2 bg-gray-300  rounded-2xl flex flex-col items-start">
+                    <div className="flex-auto w-full p-2 rounded-md">
+                        {geminiResponse ? (
+                            <p>{geminiResponse}</p>
+                        ) : (
+                            <p>{loading ? 'Loading..' : 'Ask your question in the prompt'}</p>
+                        )}
+                    </div>
+
+                    <div className="p-2 cursor-pointer  rounded-md mt-2 bg-gray-400 text-white text-xs">
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                        <button className="px-1 cursor-pointer ">Copy</button>
+                    </div>
                 </div>
             </div>
         </section>
