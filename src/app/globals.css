@@ -36,3 +36,9 @@ body {
 .border {
     border: 2px solid red;
 }
+
+.container {
+    max-width: 1024px;
+    width: 90%;
+    margin: auto;
+}

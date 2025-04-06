@@ -20,7 +20,7 @@ export default function Form({activeInput, setActiveInput}: {activeInput: number
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col  w-full  p-10 items-center  ">
-            <AnimationContainer key={activeInput}>
+            <AnimationContainer index={activeInput}>
                 <div className="flex flex-col items-center text-black ">
                     <div className="w-1/2 ">
                         <h3 className="text-2xl font-bold">{inputField.title}</h3>

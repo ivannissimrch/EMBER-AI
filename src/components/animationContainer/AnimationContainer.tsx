@@ -13,14 +13,14 @@ const variants = {
 
 interface AnimationProps {
     children: React.ReactNode;
-    key: number;
+    index: number;
 }
 
-export default function AnimationContainer({ children, key }: AnimationProps) {
+export default function AnimationContainer({ children, index }: AnimationProps) {
     return (
         <motion.div
             variants={variants}
-            key={key}
+            key={index}
             initial="hidden"
             animate="visible"
             exit="hidden"
