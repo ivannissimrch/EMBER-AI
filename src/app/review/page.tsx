@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useStoreContext } from '../helpers/StoreContext';
 import Link from 'next/link';
 import { generateResponse } from '@/util/api';
+import { BeatLoader } from 'react-spinners';
 
 export default function Review() {
     const { storeValue } = useStoreContext();
@@ -58,7 +59,15 @@ export default function Review() {
             <div className="flex flex-col my-[62px] ">
                 <h3 className="mb-4">Ember Response</h3>
                 <div className=" w-[1080px] p-4 bg-gray-300  rounded-4xl">
-                    {geminiResonse ? (
+                    {loading ? (
+                        <BeatLoader
+                            size={12}
+                            color="#3498db"
+                            loading={loading}
+                            speedMultiplier={1}
+                            className="mx-auto"
+                        />
+                    ) : geminiResonse ? (
                         <p>{geminiResonse}</p>
                     ) : (
                         <p>{loading ? 'Loading..' : 'Ask your question in the prompt'}</p>
