@@ -15,7 +15,7 @@ export default function Form({
     activeInput: number;
     setActiveInput: Function;
 }) {
-    const { storeValue, updateInputsValues } = useStoreContext();
+    const { storeValue, updateInputsValues, clearInputValue } = useStoreContext();
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -56,7 +56,7 @@ export default function Form({
                                 onChange={(e) => updateInputsValues(e.target.value, inputField.id)}
                             />
 
-                            <button className="mr-3">
+                            <button onClick={() => clearInputValue(inputField.id)} className="mr-3">
                                 <ResetButton />
                             </button>
                         </div>
