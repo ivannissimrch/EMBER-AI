@@ -5,10 +5,9 @@ import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-
-import { generateResponse } from '@/util/api';
 import { useStoreContext } from '../helpers/StoreContext';
 import { ButtonDirection } from '@/components/buttons/ButtonDirection';
+import { generateResponse } from '@/util/api';
 
 export default function Review() {
     const { storeValue } = useStoreContext();
@@ -69,21 +68,14 @@ export default function Review() {
 
             <ButtonDirection active={true} text="Generate Result" onClick={handleSubmit} />
 
-            <div className="flex flex-col my-[62px] w-full ">
-                <h3 className="mt-8 font-bold mb-2">Result</h3>
-                <div className=" w-full min-h-[126px] p-2 bg-gray-300  rounded-2xl flex flex-col items-start">
-                    <div className="flex-auto w-full p-2 rounded-md">
-                        {geminiResponse ? (
-                            <p>{geminiResponse}</p>
-                        ) : (
-                            <p>{loading ? 'Loading..' : 'Ask your question in the prompt'}</p>
-                        )}
-                    </div>
-
-                    <div className="p-2 cursor-pointer  rounded-md mt-2 bg-gray-400 text-white text-xs">
-                        <FontAwesomeIcon icon={faPenToSquare} />
-                        <button className="px-1 cursor-pointer ">Copy</button>
-                    </div>
+            <div className="flex flex-col my-[62px] ">
+                <h3 className="mb-4">Ember Response</h3>
+                <div className=" w-[1080px] p-4 bg-gray-300  rounded-4xl">
+                    {geminiResponse ? (
+                        <p>{geminiResponse}</p>
+                    ) : (
+                        <p>{loading ? 'Loading..' : 'Ask your question in the prompt'}</p>
+                    )}
                 </div>
             </div>
         </section>
