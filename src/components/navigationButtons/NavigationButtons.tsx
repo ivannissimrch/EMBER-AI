@@ -5,9 +5,16 @@ import { ButtonDirection } from '../buttons/ButtonDirection';
 interface NavigationButtonsProps {
     idx: number;
     setActiveInput: Function;
+    userInput: string;
+    setIsError: Function;
 }
 
-export default function NavigationButtons({ idx, setActiveInput }: NavigationButtonsProps) {
+export default function NavigationButtons({
+    idx,
+    setActiveInput,
+    userInput,
+    setIsError,
+}: NavigationButtonsProps) {
     const changeInput = (index: number) => {
         if (index < 0) return;
         if (index > 5) return;
@@ -31,7 +38,15 @@ export default function NavigationButtons({ idx, setActiveInput }: NavigationBut
                     <ButtonDirection
                         text="Next"
                         active={idx < 4}
-                        onClick={() => changeInput(idx + 1)}
+                        onClick={() => {
+                            if (userInput === '') {
+                                setIsError(true);
+                                return;
+                            } else {
+                                setIsError(false);
+                                changeInput(idx + 1);
+                            }
+                        }}
                     />
                 )}
             </div>
