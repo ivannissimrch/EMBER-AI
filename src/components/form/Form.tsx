@@ -35,7 +35,7 @@ export default function Form({
         }
     }, [inputField.question]);
 
-    const borderColor = isError ? 'border-red-500' : 'border-black';
+    const borderColor = isError ? 'border-custom-red' : 'border-black';
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col  w-full  p-10 items-center  ">
@@ -43,15 +43,15 @@ export default function Form({
                 <div className="flex flex-col items-center text-black ">
                     <div className="w-1/2 ">
                         <h3 className="text-2xl font-bold">{inputField.title}</h3>
-                        <p className="bg-white mb-2">{inputField.description}</p>
+                        <p className=" mb-2">{inputField.description}</p>
                         <div
-                            className={`border ${borderColor} bg-[#CAD2C5] rounded-2xl min-h-[211px] flex flex-col items-end p-2`}
+                            className={`border ${borderColor} bg-white rounded-2xl min-h-[211px] flex flex-col items-end p-2`}
                         >
                             <textarea
                                 value={inputField.question}
                                 // required
                                 name={inputField.title}
-                                className="p-4  w-full flex  flex-auto rounded-md"
+                                className="p-4  w-full flex  flex-auto rounded-md "
                                 placeholder={inputField.title}
                                 onChange={(e) => updateInputsValues(e.target.value, inputField.id)}
                             />

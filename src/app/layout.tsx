@@ -15,12 +15,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="h-screen bg-white">
-            <body className="h-screen bg-green-400 flex flex-col">
+        <html lang="en" className="h-screen bg-custom-background">
+            <body className="h-screen  flex flex-col">
                 <Header />
 
                 <StoreProvider>
-                    <main className=" bg-white flex-grow">{children}</main>
+                    <main className=" bg-custom-background flex-grow">{children}</main>
                 </StoreProvider>
 
                 <Footer />
