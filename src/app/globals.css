@@ -8,6 +8,8 @@
     --custom-orange: #e26310;
     --custom-background: #ffede2;
     --custom-purple: #61529d;
+    --custom-blue: #cddcee;
+    --custom-red: #ff2c2c;
 }
 
 @theme inline {
@@ -18,6 +20,8 @@
     --color-custom-orange: var(--custom-orange);
     --color-custom-background: var(--custom-background);
     --color-custom-purple: var(--custom-purple);
+    --color-custom-blue: var(--custom-blue);
+    --color-custom-red: var(--custom-red);
 }
 
 @media (prefers-color-scheme: dark) {
