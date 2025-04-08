@@ -68,9 +68,9 @@ export default function Review() {
 
             <ButtonDirection active={true} text="Generate Result" onClick={handleSubmit} />
 
-            <div className="flex flex-col my-[62px] ">
-                <h3 className="mb-4">Ember Response</h3>
-                <div className=" w-[1080px] p-4 bg-gray-300  rounded-4xl">
+            <div className="w-full flex flex-col my-[62px] ">
+                <h3 className="font-bold mb-2">Ember Response</h3>
+                <div className="w-full p-4 bg-gray-300  rounded-lg">
                     {geminiResponse ? (
                         <p>{geminiResponse}</p>
                     ) : (
