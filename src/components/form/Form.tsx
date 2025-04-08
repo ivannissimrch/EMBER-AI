@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import { FormEvent, useEffect, useState } from 'react';
-
 import { useStoreContext } from '@/app/helpers/StoreContext';
-
 import ResetButton from '../buttons/ResetButton';
 import NavigationButtons from '../navigationButtons/NavigationButtons';
 import AnimationContainer from '../animationContainer/AnimationContainer';

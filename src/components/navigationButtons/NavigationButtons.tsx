@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import Link from 'next/link';
 
 import { ButtonDirection } from '../buttons/ButtonDirection';
