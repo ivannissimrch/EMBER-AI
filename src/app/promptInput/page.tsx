@@ -1,11 +1,7 @@
 'use client';
-
 import Form from '@/components/form/Form';
-import Box from '@mui/material/Box';
-
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs';
 import { RefObject, useRef, useState } from 'react';
-
 export interface Inputs {
     title: string;
     inputRef: RefObject<HTMLDivElement | null>;
@@ -28,17 +24,17 @@ export default function PromptInput() {
 
     const [activeStep, setActiveStep] = useState(0);
 
-    function handleNext(idx: number) {
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        console.log('handleNext used, idx:', idx);
-    }
-    function handleBack(idx: number) {
-        setActiveStep((prevActiveStep) => prevActiveStep - 1);
-        console.log('handleBack used, idx:', idx);
-    }
-    function handleReset() {
-        setActiveStep(0);
-    }
+    // function handleNext(idx: number) {
+    //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    //     console.log('handleNext used, idx:', idx);
+    // }
+    // function handleBack(idx: number) {
+    //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    //     console.log('handleBack used, idx:', idx);
+    // }
+    // function handleReset() {
+    //     setActiveStep(0);
+    // }
     function handleStepperClick(index: number) {
         setActiveStep(index);
         console.log('Step clicked:', index);
@@ -50,9 +46,9 @@ export default function PromptInput() {
                 <Breadcrumbs
                     steps={inputs.map((input) => input.title)} // ["Persona", "Context", ....]
                     activeStep={activeStep} // 0 -> 1 -> 2
-                    handleNext={handleNext}
-                    handleBack={handleBack}
-                    handleReset={handleReset}
+                    // handleNext={handleNext}
+                    // handleBack={handleBack}
+                    // handleReset={handleReset}
                     handleStepperClick={handleStepperClick}
                 />
             </div>
