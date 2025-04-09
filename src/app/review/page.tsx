@@ -9,6 +9,9 @@ import { useStoreContext } from '../helpers/StoreContext';
 import { ButtonDirection } from '@/components/buttons/ButtonDirection';
 import { generateResponse } from '@/util/api';
 
+import MarkdownComponent from '@/components/markdown/MarkdownComponent';
+import Loading from '@/components/Loading';
+
 export default function Review() {
     const { storeValue } = useStoreContext();
 
@@ -70,11 +73,13 @@ export default function Review() {
 
             <div className="w-full flex flex-col my-[62px] ">
                 <h3 className="font-bold mb-2">Ember Response</h3>
-                <div className="w-full p-4 bg-gray-300  rounded-lg">
-                    {geminiResponse ? (
-                        <p>{geminiResponse}</p>
+                <div className="w-full p-4 bg-gray-300  rounded-lg geminiMarkdown">
+                    {loading ? (
+                        <Loading />
+                    ) : geminiResponse ? (
+                        <MarkdownComponent markdownText={geminiResponse} />
                     ) : (
-                        <p>{loading ? 'Loading..' : 'Ask your question in the prompt'}</p>
+                        <p> {'Ask your question in the prompt'}</p>
                     )}
                 </div>
             </div>
