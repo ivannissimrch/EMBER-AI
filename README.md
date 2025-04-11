@@ -1,4 +1,6 @@
-# 📌 Project Name (AI Assistant)
+# ⭐ Ember AI
+
+
 
 Your project's `readme` is as important to success as your code. For
 this reason you should put as much care into its creation and maintenance
@@ -62,9 +64,10 @@ coding!
 
 - Vanshika Patel (UX/UI Developer): [GitHub](https://github.com/vanshika-99) / [LinkedIn](https://linkedin.com/in/vanshikapatel)
 
-### Scrum Mster
+### Scrum Master
 
-- Chanae Pickett Scrum Master: [GitHub](https://github.com/chanaelynease) / [LinkedIn](https://linkedin.com/in/chanaepickett)
+- Chanae Pickett (Scrum Master): [GitHub](https://github.com/chanaelynease) / [LinkedIn](https://linkedin.com/in/chanaepickett)
+- (Scrum Master): [Github](https://github.com/) / [LinkedIn](https://linkedin.com/in/)
 
 ### Voyage Guide
 
@@ -76,5 +79,4 @@ coding!
 - Nate Kagnaw (Developer) : [GitHub](https://github.com/natnaelsisay) / [LinkedIn](https://www.linkedin.com/in/natnael-kagnaw/)
 - Bryan Hoyem (Developer): [GitHub](https://github.com/bhoyem) / [LinkedIn](https://www.linkedin.com/in/bhoyem/)
 - Kento Kanehira (Developer): [GitHub](https://github.com/kento-ix) / [LinkedIn](https://www.linkedin.com/in/kento-kanehira-ixx/)
-- Olivia Cameron (Developer): [GitHub](https://www.github.com/olivcamj) / [LinkedIn](https://www.linkedin.com/in/olivia-cameronj)
 - Lindsay Allen (Developer): [GitHub](https://github.com/lkallen) / [LinkedIn](https://www.linkedin.com/in/lindsay-allen-54b46937/)
