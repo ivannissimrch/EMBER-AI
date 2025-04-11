@@ -52,7 +52,7 @@ export default function Form({
                                 // required
                                 name={inputField.title}
                                 className="p-4  w-full flex  flex-auto rounded-md "
-                                placeholder={inputField.title}
+                                placeholder={inputField.placeHolder}
                                 onChange={(e) => updateInputsValues(e.target.value, inputField.id)}
                             />
 
