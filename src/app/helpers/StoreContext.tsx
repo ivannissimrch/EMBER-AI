@@ -6,6 +6,7 @@ export interface Inputs {
     id: string;
     title: string;
     description: string;
+    placeHolder: string;
     question: string;
     inputRef: RefObject<HTMLDivElement | null>;
 }
@@ -122,35 +123,40 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
             {
                 id: 'q1',
                 title: 'Persona',
-                description: 'Describe who the result will be tailored for',
+                description: 'Assign an identity to the AI.',
+                placeHolder: `Give me a role. E.g. “You are a developer.."`,
                 question: '',
                 inputRef: personaRef,
             },
             {
                 id: 'q2',
                 title: 'Context',
-                description: 'Provide background information',
+                description: 'Provide the AI with some background information.',
+                placeHolder: `Give me some background. E.g. “new to the industry”`,
                 question: '',
                 inputRef: contextRef,
             },
             {
                 id: 'q3',
                 title: 'Task',
-                description: 'Provide information needed.',
+                description: 'Specify what you want the AI to do.',
+                placeHolder: `Give me some action to perform. E.g. “Analyze market trends”`,
                 question: '',
                 inputRef: taskRef,
             },
             {
                 id: 'q4',
                 title: 'Output',
-                description: 'Defines how you want the AI tool to respond',
+                description: 'Describe the tone of the response.',
+                placeHolder: `Give me the style of the response you want. E.g. “keep the tone informal and in bullet point format”`,
                 question: '',
                 inputRef: outputRef,
             },
             {
                 id: 'q5',
-                title: 'Boundaries',
-                description: 'Provide  boundaries',
+                title: 'Constraint',
+                description: 'Set boundaries or restrictions for the response.',
+                placeHolder: `Give me things I should avoid. E.g. “from the last 6 months in the U.S. Limit to the list to the top 10 trends”`,
                 question: '',
                 inputRef: constrainRef,
             },
