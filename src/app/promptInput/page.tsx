@@ -2,6 +2,7 @@
 import Form from '@/components/form/Form';
 import Breadcrumbs from '@/components/breadcrumbs/Breadcrumbs';
 import { RefObject, useRef, useState } from 'react';
+import { useStoreContext } from '../helpers/StoreContext';
 export interface Inputs {
     title: string;
     inputRef: RefObject<HTMLDivElement | null>;
@@ -22,6 +23,7 @@ export default function PromptInput() {
         { title: 'Constrain', inputRef: constrainRef },
     ];
 
+    const { storeValue } = useStoreContext();
     const [activeStep, setActiveStep] = useState(0);
 
     // function handleNext(idx: number) {
@@ -36,6 +38,13 @@ export default function PromptInput() {
     //     setActiveStep(0);
     // }
     function handleStepperClick(index: number) {
+        const prevIndex = index - 1;
+
+        if (prevIndex > 0) {
+            if (storeValue.inputValues[index - 1].question === '') {
+                return;
+            }
+        }
         setActiveStep(index);
         console.log('Step clicked:', index);
     }
