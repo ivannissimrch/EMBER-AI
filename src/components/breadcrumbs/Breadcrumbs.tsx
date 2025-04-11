@@ -23,7 +23,7 @@ export default function Breadcrumbs({
 }: StepperPros) {
     return (
         <Box className="w-full p-4 rounded">
-            <Stepper activeStep={activeStep} className="text-blue-500">
+            <Stepper activeStep={activeStep} alternativeLabel>
                 {steps.map((label, idx) => {
                     const stepProps: { completed?: boolean } = {};
                     const labelProps: {
@@ -32,6 +32,24 @@ export default function Breadcrumbs({
                     return (
                         <Step
                             key={label}
+                            sx={{
+                                '& .MuiStepLabel-root .Mui-completed': {
+                                    color: '#cddcee',
+                                },
+                                '& .MuiStepLabel-label.Mui-completed.MuiStepLabel-alternativeLabel':
+                                    {
+                                        color: 'black',
+                                    },
+                                '& .MuiStepLabel-root .Mui-active': {
+                                    color: '#cddcee',
+                                },
+                                '& .MuiStepLabel-label.Mui-active.MuiStepLabel-alternativeLabel': {
+                                    color: 'black',
+                                },
+                                '& .MuiStepLabel-root .Mui-active .MuiStepIcon-text': {
+                                    fill: 'black',
+                                },
+                            }}
                             className="cursor-pointer"
                             {...stepProps}
                             // onClick={() => handleStepperClick(idx)}
