@@ -20,7 +20,7 @@ export default function PromptInput() {
         { title: 'Context', inputRef: contextRef },
         { title: 'Task', inputRef: taskRef },
         { title: 'Output', inputRef: outputRef },
-        { title: 'Constrain', inputRef: constrainRef },
+        { title: 'Constraint', inputRef: constrainRef },
     ];
 
     const { storeValue } = useStoreContext();
