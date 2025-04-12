@@ -25,28 +25,24 @@ export default function PromptInput() {
 
     const { storeValue } = useStoreContext();
     const [activeStep, setActiveStep] = useState(0);
+    const [isError, setIsError] = useState(false);
 
-    // function handleNext(idx: number) {
-    //     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    //     console.log('handleNext used, idx:', idx);
-    // }
-    // function handleBack(idx: number) {
-    //     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-    //     console.log('handleBack used, idx:', idx);
-    // }
-    // function handleReset() {
-    //     setActiveStep(0);
-    // }
     function handleStepperClick(index: number) {
+        const firstEmptyInputIndex = storeValue.inputValues.findIndex(
+            (input) => input.question === ''
+        );
         const prevIndex = index - 1;
-
-        if (prevIndex > 0) {
-            if (storeValue.inputValues[index - 1].question === '') {
+        if (prevIndex >= 0) {
+            if (storeValue.inputValues[prevIndex].question === '') {
+                setActiveStep(firstEmptyInputIndex);
+                setIsError(true);
                 return;
             }
         }
+        if (storeValue.inputValues[index].question !== '') {
+            setIsError(false);
+        }
         setActiveStep(index);
-        console.log('Step clicked:', index);
     }
 
     return (
@@ -55,15 +51,17 @@ export default function PromptInput() {
                 <Breadcrumbs
                     steps={inputs.map((input) => input.title)} // ["Persona", "Context", ....]
                     activeStep={activeStep} // 0 -> 1 -> 2
-                    // handleNext={handleNext}
-                    // handleBack={handleBack}
-                    // handleReset={handleReset}
                     handleStepperClick={handleStepperClick}
                 />
             </div>
 
             <div className="">
-                <Form activeInput={activeStep} setActiveInput={setActiveStep} />
+                <Form
+                    activeInput={activeStep}
+                    setActiveInput={setActiveStep}
+                    isError={isError}
+                    setIsError={setIsError}
+                />
             </div>
         </div>
     );

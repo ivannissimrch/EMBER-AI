@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
-import { FormEvent, useEffect, useState } from 'react';
+import { Dispatch, FormEvent, SetStateAction, useEffect, useState } from 'react';
 import { useStoreContext } from '@/app/helpers/StoreContext';
 import ResetButton from '../buttons/ResetButton';
 import NavigationButtons from '../navigationButtons/NavigationButtons';
@@ -11,9 +10,13 @@ import ErrorMessage from '../alertMessage/ErrorMessage';
 export default function Form({
     activeInput,
     setActiveInput,
+    isError,
+    setIsError,
 }: {
     activeInput: number;
-    setActiveInput: Function;
+    setActiveInput: Dispatch<SetStateAction<number>>;
+    isError: boolean;
+    setIsError: Dispatch<SetStateAction<boolean>>;
 }) {
     const { storeValue, updateInputsValues, clearInputValue } = useStoreContext();
 
@@ -21,11 +24,8 @@ export default function Form({
         event.preventDefault();
     }
 
-    // const [activeInput, setActiveInput] = useState(0);
     const inputField = storeValue.inputValues[activeInput];
-
     const [isInvalid, setIsInvalid] = useState(true);
-    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         if (inputField.question === '') {
@@ -49,7 +49,6 @@ export default function Form({
                         >
                             <textarea
                                 value={inputField.question}
-                                // required
                                 name={inputField.title}
                                 className="p-4  w-full flex  flex-auto rounded-md "
                                 placeholder={inputField.placeHolder}

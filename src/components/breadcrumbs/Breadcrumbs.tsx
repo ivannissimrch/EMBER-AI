@@ -3,25 +3,14 @@ import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import { StepIcon } from '@mui/material';
 
 interface StepperPros {
     steps: string[];
     activeStep: number;
-    // handleNext: () => void;
-    // handleBack: () => void;
-    // handleReset: () => void;
     handleStepperClick: (idx: number) => void;
 }
 
-export default function Breadcrumbs({
-    steps, //
-    activeStep,
-    // handleNext,
-    // handleBack,
-    // handleReset,
-    handleStepperClick,
-}: StepperPros) {
+export default function Breadcrumbs({ steps, activeStep, handleStepperClick }: StepperPros) {
     return (
         <Box className="w-full p-4 rounded">
             <Stepper activeStep={activeStep} alternativeLabel>
@@ -57,7 +46,6 @@ export default function Breadcrumbs({
                             <StepLabel {...labelProps} onClick={() => handleStepperClick(idx)}>
                                 {label}
                             </StepLabel>
-                            <StepIcon icon={undefined} />
                         </Step>
                     );
                 })}
