@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
+import { StepIcon } from '@mui/material';
 
 interface StepperPros {
     steps: string[];
@@ -52,11 +53,11 @@ export default function Breadcrumbs({
                             }}
                             className="cursor-pointer"
                             {...stepProps}
-                            // onClick={() => handleStepperClick(idx)}
                         >
                             <StepLabel {...labelProps} onClick={() => handleStepperClick(idx)}>
                                 {label}
                             </StepLabel>
+                            <StepIcon icon={undefined} />
                         </Step>
                     );
                 })}
