@@ -1,13 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import Link from 'next/link';
-
 import { ButtonDirection } from '../buttons/ButtonDirection';
+import { Dispatch, SetStateAction } from 'react';
 
 interface NavigationButtonsProps {
     idx: number;
-    setActiveInput: Function;
+    setActiveInput: Dispatch<SetStateAction<number>>;
     userInput: string;
-    setIsError: Function;
+    setIsError: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function NavigationButtons({
@@ -29,7 +28,13 @@ export default function NavigationButtons({
                     <ButtonDirection
                         text="Back"
                         active={idx > 0}
-                        onClick={() => changeInput(idx - 1)}
+                        onClick={() => {
+                            const prevInput = idx - 1;
+                            changeInput(prevInput);
+                            if (userInput[prevInput] !== '') {
+                                setIsError(false);
+                            }
+                        }}
                     />
                 ) : (
                     <span></span>
