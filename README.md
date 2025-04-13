@@ -1,6 +1,5 @@
-# ⭐ Ember AI
-
-
+# Ember AI
+![Ember AI](./public/images/logo.svg)
 
 # 💻 Overview
 
