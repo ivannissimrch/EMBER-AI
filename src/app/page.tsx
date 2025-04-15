@@ -10,7 +10,7 @@ export default function Home() {
 					Ember AI is a prompt building assistant designed to help a user craft a well written, 
 					complete prompt to use when utilizing an AI platform in seeking information.<br />
 					It is based on the Pentagram method, or framework of crafting a prompt which is composed of five parts.<br />
-					<strong>1. The Persona</strong> - a role that the LLM, or AI, should assume to give a point of reference for it's response.<br />
+					<strong>1. The Persona</strong> - a role that the LLM, or AI, should assume to give a point of reference for a response.<br />
 					<strong>2. The Context</strong> - gives background information for the LLM so that the intent of the task is understood.<br />
 					<strong>3. The Task</strong> - clearly define what the you are asking of the LLM. Include specific action verbs and instructions.<br />
 					<strong>4. The Output</strong> - describe the desired format of the response.<br />
