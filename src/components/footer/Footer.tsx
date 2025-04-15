@@ -8,7 +8,7 @@ export default function Footer() {
                 <Image src="images/githubIcon.svg" alt="location icon" width={25} height={25} />
             </Link>
 
-            <p className=" font-[Bitter] not-italic font-normal leading-[normal] flex justify-center">
+            <p className=" font-[open sans] not-italic font-normal leading-[normal] flex justify-center">
                 ©2025 Ember AI. All Rights Reserved
             </p>
         </footer>

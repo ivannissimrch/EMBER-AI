@@ -46,7 +46,7 @@ export const TeamMembers: TeamMemberInfo[] = [
         name: 'Bryan Hoyem',
         role: 'Developer',
         githubLink: 'https://github.com/bhoyem',
-        linkedinLink: 'https://www.linkedin.com/in/bhoyem/',
+        linkedinLink: 'https://www.linkedin.com/in/bryanhoyem/',
         icon: '/images/avatars/bryan.png',
     },
     {
