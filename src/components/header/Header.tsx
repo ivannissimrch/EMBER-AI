@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 export default function Header() {
     const pathname = usePathname();
     return (
-        <header className="bg-custom-background text-black flex justify-between items-center px-6 py-3 ">
-            <div className="logo">
+        <header className="bg-custom-background text-black flex items-center px-6 py-3 w-full relative">
+            <div className="logo flex-none">
                 {pathname !== '/' ? (
                     <Link href={'/'}>
                         <h1 className="font-[Poppins] text-[22px] not-italic font-semibold leading-[normal] ">
@@ -132,7 +132,7 @@ export default function Header() {
                     ''
                 )}
             </div>
-            <div className="flex w-2/3 p-2  gap-10 font-bold text-custom-purple ">
+            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 flex gap-10 font-bold text-custom-purple ">
                 <Link href={'/about'}>About Us</Link>
                 <Link href={'https://github.com/chingu-voyages/V54-tier2-team-23'}>Contribute</Link>
             </div>

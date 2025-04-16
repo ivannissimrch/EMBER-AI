@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<section className=" h-full text-black flex flex-col items-center justify-center overflow-y-auto">
-			<div className="w-9/12 flex gap-2 items-center">
+			<div className="w-9/12 flex gap-2 items-center justify-center">
 				<div className="justify-items-center ">
 					<img src="../../images/logo.svg" alt="Ember AI logo" className="h-[150px] pb-[60px]"/>
 					<div className="font-bold text-lg mb-2">
