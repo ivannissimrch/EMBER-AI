@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ButtonDirection } from '../buttons/ButtonDirection';
 import { Dispatch, SetStateAction } from 'react';
+import InspireMeButton from '../inspireMeButton/InspireMeButton';
 
 interface NavigationButtonsProps {
     idx: number;
@@ -23,6 +24,7 @@ export default function NavigationButtons({
 
     return (
         <div>
+            <InspireMeButton />
             <div className="flex justify-between">
                 {idx > 0 ? (
                     <ButtonDirection
