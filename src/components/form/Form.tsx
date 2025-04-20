@@ -36,7 +36,6 @@ export default function Form({
     }, [inputField.question]);
 
     const borderColor = isError ? 'border-custom-red' : 'border-black';
-    console.log(inputField);
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col  w-full  p-10 items-center  ">
@@ -64,7 +63,7 @@ export default function Form({
                         <NavigationButtons
                             idx={activeInput}
                             setActiveInput={setActiveInput}
-                            userInput={inputField.question}
+                            userInput={inputField}
                             setIsError={setIsError}
                         />
                     </div>

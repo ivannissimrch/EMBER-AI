@@ -1,34 +1,63 @@
-export default function InspireMeButton() {
-    const inspiringQuestions = [
-        {
-            persona: ['my name is Jack and I am a pirate', 'I am mouse and my name is Pinky'],
-        },
-        {
-            context: [
-                'I been making a plan on how thinking on how to dominate the world for years',
-                'I am new to the industry and trying to improuve my skills',
-            ],
-        },
-        {
-            task: [
-                'give me some dad jokes',
-                'give me some dating advice',
-                'give me some cooking recipies',
-            ],
-        },
-        {
-            output: [
-                'keept the tone formal in bullet pointg',
-                'give me some small achivavble goals',
-            ],
-        },
-        { constraint: ['from the last 6 month sin the usa', ''] },
-    ];
+import { Inputs, useStoreContext } from '@/app/helpers/StoreContext';
+
+export default function InspireMeButton({ activeUserInput }: { activeUserInput: Inputs }) {
+    const inspiringQuestions: Record<string, string[]> = {
+        q1: [
+            'You are an forward thinking archeologist',
+            'You are a solo traveler',
+            'You are a teacher',
+            'You are a personal trainer',
+            'You are a relationships coach',
+            'You are Gordon Ramsey',
+            'You are Will Ferrell',
+        ],
+        q2: [
+            'I would like to learn if bringing dinosaurs back from extinction would be good for our ecology',
+            'planning a 2 week trip to Japan',
+            'I would like to learn how to cook breakfast like a pro',
+            'I am looking to grow my knowledge of computer science',
+            'I need career change advice',
+            'I need a workout routine',
+            'I would like to learn how to improve my communication skills',
+        ],
+        q3: [
+            'Analyze ecological studies and extinction research from the last 5 years to determine how introducing long extinct species into the modern world may impact current ecologies',
+            'make a list of must-see and places to shop in Japan. include shops where you can buy matcha',
+            'explain step by step how to make breakfast using eggs, coffee, and toast',
+            'create a workout using no equipment',
+        ],
+        q4: [
+            'Present the results using paragraph format in a professional yet slightly humorous tone',
+            'make a bullet point list, separated by city',
+            'make it easy to skim',
+            'keep it friendly and simple',
+            'pretend you are explaining this to a 5 year old',
+            'pretend you are explaining this during a stand-up comedy set',
+        ],
+        q5: [
+            'Limit the response to 500 words and avoid political discussions',
+            'limit the list to 5 places per city. also include hidden gems, not just popular tourist spots in each spot',
+            'add 2 fun facts at the end for bonus',
+            'include links and resources when possible',
+            'make sure each point has a practical takeaway or tip',
+        ],
+    };
+    const { updateInputsValues } = useStoreContext();
+
+    function generateRandomQuestion(userInput: Inputs) {
+        const questionId = userInput.id;
+        const randomNumber = Math.floor(Math.random() * inspiringQuestions[questionId].length);
+        const exampleQuestion = inspiringQuestions[questionId][randomNumber];
+        updateInputsValues(exampleQuestion, activeUserInput.id);
+    }
 
     return (
-        <div className="flex mt-[20px]">
+        <button
+            className="flex mt-[20px] hover:cursor-pointer group"
+            onClick={() => generateRandomQuestion(activeUserInput)}
+        >
             <svg
-                onClick={() => alert('click')}
+                className="group-hover:scale-110 transition-all duration-300 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
                 height="25"
@@ -54,6 +83,6 @@ export default function InspireMeButton() {
                 {' '}
                 Inspire Me
             </p>
-        </div>
+        </button>
     );
 }

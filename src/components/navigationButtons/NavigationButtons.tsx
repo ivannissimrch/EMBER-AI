@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { ButtonDirection } from '../buttons/ButtonDirection';
 import { Dispatch, SetStateAction } from 'react';
 import InspireMeButton from '../inspireMeButton/InspireMeButton';
+import { Inputs, useStoreContext } from '@/app/helpers/StoreContext';
 
 interface NavigationButtonsProps {
     idx: number;
     setActiveInput: Dispatch<SetStateAction<number>>;
-    userInput: string;
+    userInput: Inputs;
     setIsError: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -22,9 +23,11 @@ export default function NavigationButtons({
         setActiveInput(index);
     };
 
+    const { storeValue } = useStoreContext();
+
     return (
         <div>
-            <InspireMeButton />
+            <InspireMeButton activeUserInput={userInput} />
             <div className="flex justify-between">
                 {idx > 0 ? (
                     <ButtonDirection
@@ -33,7 +36,7 @@ export default function NavigationButtons({
                         onClick={() => {
                             const prevInput = idx - 1;
                             changeInput(prevInput);
-                            if (userInput[prevInput] !== '') {
+                            if (storeValue.inputValues[prevInput].question !== '') {
                                 setIsError(false);
                             }
                         }}
@@ -47,7 +50,7 @@ export default function NavigationButtons({
                         text="Next"
                         active={idx < 4}
                         onClick={() => {
-                            if (userInput === '') {
+                            if (userInput.question === '') {
                                 setIsError(true);
                                 return;
                             } else {
