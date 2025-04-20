@@ -1,8 +1,9 @@
-import Link from 'next/link';
+'use client';
 import { ButtonDirection } from '../buttons/ButtonDirection';
 import { Dispatch, SetStateAction } from 'react';
 import InspireMeButton from '../inspireMeButton/InspireMeButton';
 import { Inputs, useStoreContext } from '@/app/helpers/StoreContext';
+import { useRouter } from 'next/navigation';
 
 interface NavigationButtonsProps {
     idx: number;
@@ -24,6 +25,7 @@ export default function NavigationButtons({
     };
 
     const { storeValue } = useStoreContext();
+    const router = useRouter();
 
     return (
         <div>
@@ -63,12 +65,20 @@ export default function NavigationButtons({
             </div>
             <div className="flex justify-center mt-2">
                 {idx == 4 && (
-                    <Link
-                        href="/review"
+                    <button
+                        type="submit"
+                        onClick={(event) => {
+                            if (userInput.question === '') {
+                                event.preventDefault();
+                                setIsError(true);
+                            } else {
+                                router.push('/review');
+                            }
+                        }}
                         className="flex justify-center items-center px-16 rounded-4xl py-2  h-12 bg-[#61529D] text-white  cursor-pointer"
                     >
                         Review
-                    </Link>
+                    </button>
                 )}
             </div>
         </div>
