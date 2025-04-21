@@ -63,7 +63,7 @@ export default function Form({
                         <NavigationButtons
                             idx={activeInput}
                             setActiveInput={setActiveInput}
-                            userInput={inputField.question}
+                            userInput={inputField}
                             setIsError={setIsError}
                         />
                     </div>

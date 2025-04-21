@@ -1,11 +1,14 @@
-import Link from 'next/link';
+'use client';
 import { ButtonDirection } from '../buttons/ButtonDirection';
 import { Dispatch, SetStateAction } from 'react';
+import InspireMeButton from '../inspireMeButton/InspireMeButton';
+import { Inputs, useStoreContext } from '@/app/helpers/StoreContext';
+import { useRouter } from 'next/navigation';
 
 interface NavigationButtonsProps {
     idx: number;
     setActiveInput: Dispatch<SetStateAction<number>>;
-    userInput: string;
+    userInput: Inputs;
     setIsError: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -21,8 +24,12 @@ export default function NavigationButtons({
         setActiveInput(index);
     };
 
+    const { storeValue } = useStoreContext();
+    const router = useRouter();
+
     return (
         <div>
+            <InspireMeButton activeUserInput={userInput} />
             <div className="flex justify-between">
                 {idx > 0 ? (
                     <ButtonDirection
@@ -31,7 +38,7 @@ export default function NavigationButtons({
                         onClick={() => {
                             const prevInput = idx - 1;
                             changeInput(prevInput);
-                            if (userInput[prevInput] !== '') {
+                            if (storeValue.inputValues[prevInput].question !== '') {
                                 setIsError(false);
                             }
                         }}
@@ -45,7 +52,7 @@ export default function NavigationButtons({
                         text="Next"
                         active={idx < 4}
                         onClick={() => {
-                            if (userInput === '') {
+                            if (userInput.question === '') {
                                 setIsError(true);
                                 return;
                             } else {
@@ -58,12 +65,20 @@ export default function NavigationButtons({
             </div>
             <div className="flex justify-center mt-2">
                 {idx == 4 && (
-                    <Link
-                        href="/review"
+                    <button
+                        type="submit"
+                        onClick={(event) => {
+                            if (userInput.question === '') {
+                                event.preventDefault();
+                                setIsError(true);
+                            } else {
+                                router.push('/review');
+                            }
+                        }}
                         className="flex justify-center items-center px-16 rounded-4xl py-2  h-12 bg-[#61529D] text-white  cursor-pointer"
                     >
                         Review
-                    </Link>
+                    </button>
                 )}
             </div>
         </div>
