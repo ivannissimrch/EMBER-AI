@@ -5,10 +5,13 @@ import Link from 'next/link';
 import { BeatLoader } from 'react-spinners';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { HiOutlineClipboardDocument } from 'react-icons/hi2';
+import { HiOutlineClipboardDocumentCheck } from 'react-icons/hi2';
 import { useStoreContext } from '../helpers/StoreContext';
 import { ButtonDirection } from '@/components/buttons/ButtonDirection';
 import { generateResponse } from '@/util/api';
 import MarkdownComponent from '@/components/markdown/MarkdownComponent';
+import useCopy from '@react-hook/copy';
 
 export default function Review() {
     const { storeValue } = useStoreContext();
@@ -33,6 +36,8 @@ export default function Review() {
         setGeminiResponse(response as string);
     };
 
+    const { copied, copy, reset } = useCopy(combineInputs);
+
     return (
         <section className="text-black flex flex-col items-center h-full overflow-y-auto container">
             <section className="flex flex-col mt-[58px] w-full">
@@ -50,18 +55,31 @@ export default function Review() {
                         value={combineInputs}
                         onChange={(e) => setCombineInputs(e.target.value)}
                     />
-                    <div
-                        className={`p-2 cursor-pointer  rounded-md mt-2 text-xs ${
-                            disabled ? 'bg-gray-400 text-white' : ''
-                        }`}
-                    >
-                        <FontAwesomeIcon icon={faPenToSquare} />
 
-                        <button
-                            onClick={() => setDisabled(!disabled)}
-                            className="px-1 cursor-pointer "
+                    <div className="w-full justify-between flex">
+                        <div
+                            className={`p-2 cursor-pointer  rounded-md mt-2 text-xs content-center ${
+                                disabled ? 'bg-gray-400 text-white' : ''
+                            }`}
                         >
-                            Edit Prompt
+                            <FontAwesomeIcon icon={faPenToSquare} />
+
+                            <button
+                                onClick={() => setDisabled(!disabled)}
+                                className="px-1 cursor-pointer "
+                            >
+                                Edit Prompt
+                            </button>
+                        </div>
+                        <button
+                            onClick={copy}
+                            className="p-2 cursor-pointer mr-6 rounded-md mt-2 text-xl bg-gray-400 text-white"
+                        >
+                            {copied === false ? (
+                                <HiOutlineClipboardDocument />
+                            ) : (
+                                <HiOutlineClipboardDocumentCheck />
+                            )}
                         </button>
                     </div>
                 </div>
