@@ -19,6 +19,7 @@
     "@google/genai": "^0.7.0",
     "@google/generative-ai": "^0.24.0",
     "@mui/material": "^7.0.1",
+    "@react-hook/copy": "^2.0.1",
     "motion": "^12.6.0",
     "next": "^15.2.3",
     "react": "^19.0.0",
