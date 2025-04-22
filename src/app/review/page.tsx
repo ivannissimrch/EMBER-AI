@@ -49,14 +49,14 @@ export default function Review() {
                 <div className="flex flex-col items-start p-2  bg-gray-300  rounded-2xl w-full">
                     <textarea
                         disabled={disabled}
-                        className={`w-full h-[326px] rounded-md p-2 ${
+                        className={`w-full h-[200px] rounded-md p-2 ${
                             disabled ? 'text-gray-400' : 'text-black border-1 border-amber-50'
                         }`}
                         value={combineInputs}
                         onChange={(e) => setCombineInputs(e.target.value)}
                     />
 
-                    <div className="w-full justify-between flex">
+                    <div className="w-full justify-between flex ">
                         <div
                             className={`p-2 cursor-pointer  rounded-md mt-2 text-xs content-center ${
                                 disabled ? 'bg-gray-400 text-white' : ''
@@ -73,7 +73,7 @@ export default function Review() {
                         </div>
                         <button
                             onClick={copy}
-                            className="p-2 cursor-pointer mr-6 rounded-md mt-2 text-xl bg-gray-400 text-white"
+                            className="p-2 cursor-pointer  mr-6 rounded-md mt-2 text-xl bg-gray-400 text-white"
                         >
                             {copied === false ? (
                                 <HiOutlineClipboardDocument />
@@ -89,7 +89,7 @@ export default function Review() {
 
             <div className="w-full flex flex-col my-[62px] ">
                 <h3 className="font-bold mb-2">Ember Response</h3>
-                <div className="w-full p-4 bg-gray-300  rounded-lg geminiMarkdown">
+                <div className="w-full p-4 bg-gray-300  rounded-lg geminiMarkdown h-[200px] ">
                     {loading ? (
                         <BeatLoader
                             size={12}
