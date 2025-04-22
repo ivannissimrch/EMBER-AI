@@ -36,7 +36,7 @@ export default function Review() {
         setGeminiResponse(response as string);
     };
 
-    const { copied, copy, reset } = useCopy(combineInputs);
+    const { copied, copy } = useCopy(combineInputs);
 
     return (
         <section className="text-black flex flex-col items-center h-full overflow-y-auto container">
