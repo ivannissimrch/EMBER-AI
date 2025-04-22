@@ -10,6 +10,9 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
             'You are a relationships coach',
             'You are Gordon Ramsey',
             'You are Will Ferrell',
+            'You are Chuck Norris',
+            'You are a secret agent',
+            'You are an alien from another galaxy',
         ],
         q2: [
             'I would like to learn if bringing dinosaurs back from extinction would be good for our ecology',
@@ -19,12 +22,15 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
             'I need career change advice',
             'I need a workout routine',
             'I would like to learn how to improve my communication skills',
+            'I want to learn about modern booby traps',
+            'I want to learn how to take over the world',
         ],
         q3: [
             'Analyze ecological studies and extinction research from the last 5 years to determine how introducing long extinct species into the modern world may impact current ecologies',
             'make a list of must-see and places to shop in Japan. include shops where you can buy matcha',
             'explain step by step how to make breakfast using eggs, coffee, and toast',
             'create a workout using no equipment',
+            'create a todo list for taking over the world',
         ],
         q4: [
             'Present the results using paragraph format in a professional yet slightly humorous tone',
@@ -33,6 +39,7 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
             'keep it friendly and simple',
             'pretend you are explaining this to a 5 year old',
             'pretend you are explaining this during a stand-up comedy set',
+            'pretend you are explaning this to a cave man',
         ],
         q5: [
             'Limit the response to 500 words and avoid political discussions',
@@ -40,6 +47,7 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
             'add 2 fun facts at the end for bonus',
             'include links and resources when possible',
             'make sure each point has a practical takeaway or tip',
+            'make this result as ridiculous as possible',
         ],
     };
     const { updateInputsValues } = useStoreContext();
