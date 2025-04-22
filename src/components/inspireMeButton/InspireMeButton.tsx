@@ -30,7 +30,7 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
             'make a list of must-see and places to shop in Japan. include shops where you can buy matcha',
             'explain step by step how to make breakfast using eggs, coffee, and toast',
             'create a workout using no equipment',
-            'create a todo list for taking over the world',
+            'explain how I can take over the world using only caveman technology',
         ],
         q4: [
             'Present the results using paragraph format in a professional yet slightly humorous tone',
@@ -39,7 +39,7 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
             'keep it friendly and simple',
             'pretend you are explaining this to a 5 year old',
             'pretend you are explaining this during a stand-up comedy set',
-            'pretend you are explaning this to a cave man',
+            'pretend you are explaning this to a caveman sent into the current year',
         ],
         q5: [
             'Limit the response to 500 words and avoid political discussions',
