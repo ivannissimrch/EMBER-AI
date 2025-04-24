@@ -61,7 +61,7 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
 
     return (
         <button
-            className="flex mt-[20px] hover:cursor-pointer group"
+            className="flex mt-[20px] hover:cursor-pointer group  h-[22px] items-center mb-4 "
             onClick={() => generateRandomQuestion(activeUserInput)}
         >
             <svg
@@ -87,7 +87,7 @@ export default function InspireMeButton({ activeUserInput }: { activeUserInput: 
                     fill="#61529D"
                 />
             </svg>
-            <p className='text-[#61529D] font-["Helvetica_Neue"] text-[22px] not-italic font-normal leading-[normal]'>
+            <p className='text-[#61529D] font-["Helvetica_Neue"]  not-italic font-normal leading-[normal]'>
                 {' '}
                 Inspire Me
             </p>
