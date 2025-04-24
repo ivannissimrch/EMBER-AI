@@ -89,7 +89,7 @@ export default function Review() {
 
             <div className="w-full flex flex-col my-[62px] ">
                 <h3 className="font-bold mb-2">Ember Response</h3>
-                <div className="w-full p-4 bg-gray-300  rounded-lg geminiMarkdown h-[200px] ">
+                <div className="w-full p-4 bg-gray-300  rounded-lg geminiMarkdown min-h-[250px]">
                     {loading ? (
                         <BeatLoader
                             size={12}
