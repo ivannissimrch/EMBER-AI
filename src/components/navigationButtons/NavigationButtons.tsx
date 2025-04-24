@@ -63,7 +63,7 @@ export default function NavigationButtons({
                     />
                 )}
             </div>
-            <div className="flex justify-center mt-2">
+            <div className="flex justify-center  mt-4 sm:mt-2">
                 {idx == 4 && (
                     <button
                         type="submit"

@@ -41,7 +41,7 @@ export default function Form({
         <form onSubmit={handleSubmit} className="flex flex-col  w-full  p-10 items-center  ">
             <AnimationContainer index={activeInput}>
                 <div className="flex flex-col items-center text-black ">
-                    <div className="w-1/2 ">
+                    <div className="w-full sm:w-1/2 ">
                         <h3 className="text-2xl font-bold">{inputField.title}</h3>
                         <p className=" mb-2">{inputField.description}</p>
                         <div
