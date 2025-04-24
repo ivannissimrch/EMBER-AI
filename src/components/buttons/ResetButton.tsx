@@ -2,7 +2,7 @@
 
 export default function ResetButton() {
   return (
-    <div className="text-custom-purple flex items-center cursor-pointer">
+    <div className="text-custom-purple text-sm flex items-center cursor-pointer">
       <div>
         <svg
           width="20"
