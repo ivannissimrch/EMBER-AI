@@ -31,6 +31,13 @@ export default function PromptInput() {
         const firstEmptyInputIndex = storeValue.inputValues.findIndex(
             (input) => input.question === ''
         );
+        if (firstEmptyInputIndex === -1) {
+            setActiveStep(index);
+            if (isError === true) {
+                setIsError(false);
+            }
+            return;
+        }
         const prevIndex = index - 1;
         if (prevIndex >= 0 && index >= firstEmptyInputIndex) {
             if (storeValue.inputValues[firstEmptyInputIndex].question === '') {
