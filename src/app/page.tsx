@@ -21,7 +21,7 @@ export default function Home() {
                         See how the Pentagram Framework can take your prompt from Ember to flame.
                     </div>
                     <Link href="/promptInput">
-                        <button className="mb-4 cursor-pointer  w-[174px] h-[38px] bg-[#61529D] rounded-4xl text-[white] text-[16px] font-[Helvetica_Neue] sm:w-[287px] sm:h-[64px] sm:mb-9">
+                        <button className="mb-4 cursor-pointer  w-[174px] h-[38px] bg-[#61529D] rounded-4xl text-[white] text-xl sm:text-3xl font-[Helvetica_Neue] sm:w-[287px] sm:h-[64px] sm:mb-9">
                             Try It Out
                         </button>
                     </Link>
