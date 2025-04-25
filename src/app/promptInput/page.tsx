@@ -54,7 +54,7 @@ export default function PromptInput() {
 
     return (
         <div className="h-full ">
-            <div className="w-2/3 justify-self-center">
+            <div className="w-full justify-self-center sm:w-3/4">
                 <Breadcrumbs
                     steps={inputs.map((input) => input.title)} // ["Persona", "Context", ....]
                     activeStep={activeStep} // 0 -> 1 -> 2

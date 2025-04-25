@@ -200,7 +200,7 @@ export default function Header() {
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <g
-                                    clip-path="url(#paint0_diamond_934_985_clip_path)"
+                                    clipPath="url(#paint0_diamond_934_985_clip_path)"
                                     data-figma-skip-parse="true"
                                 >
                                     <g transform="matrix(0 0.0075 -0.0075 0 105.5 6.5)">
@@ -211,7 +211,7 @@ export default function Header() {
                                             height="1000"
                                             fill="url(#paint0_diamond_934_985)"
                                             opacity="1"
-                                            shape-rendering="crispEdges"
+                                            shapeRendering="crispEdges"
                                         />
                                         <rect
                                             x="0"
@@ -221,7 +221,7 @@ export default function Header() {
                                             transform="scale(1 -1)"
                                             fill="url(#paint0_diamond_934_985)"
                                             opacity="1"
-                                            shape-rendering="crispEdges"
+                                            shapeRendering="crispEdges"
                                         />
                                         <rect
                                             x="0"
@@ -231,7 +231,7 @@ export default function Header() {
                                             transform="scale(-1 1)"
                                             fill="url(#paint0_diamond_934_985)"
                                             opacity="1"
-                                            shape-rendering="crispEdges"
+                                            shapeRendering="crispEdges"
                                         />
                                         <rect
                                             x="0"
@@ -241,7 +241,7 @@ export default function Header() {
                                             transform="scale(-1)"
                                             fill="url(#paint0_diamond_934_985)"
                                             opacity="1"
-                                            shape-rendering="crispEdges"
+                                            shapeRendering="crispEdges"
                                         />
                                     </g>
                                 </g>
@@ -253,7 +253,7 @@ export default function Header() {
                                     d="M105.5 2.75L105.765 6.23483L109.25 6.5L105.765 6.76516L105.5 10.25L105.235 6.76516L101.75 6.5L105.235 6.23483L105.5 2.75Z"
                                     fill="white"
                                 />
-                                <g clip-path="url(#clip0_934_985)">
+                                <g clipPath="url(#clip0_934_985)">
                                     <path
                                         d="M13.1374 23.1411H3.41191C3.49195 24.1021 3.83214 24.853 4.42248 25.4036C5.01281 25.9442 5.74322 26.2245 6.6037 26.2245C7.8544 26.2245 8.7449 25.6839 9.26519 24.6127H12.8872C12.507 25.8941 11.7666 26.9453 10.676 27.7762C9.58537 28.5971 8.25462 29.0176 6.66373 29.0176C5.38301 29.0176 4.23237 28.7373 3.2218 28.1667C2.20123 27.596 1.41079 26.7951 0.840467 25.754C0.270147 24.7128 -0.0100098 23.5115 -0.0100098 22.15C-0.0100098 20.7885 0.270147 19.5671 0.830461 18.526C1.39078 17.4848 2.17121 16.6839 3.18178 16.1233C4.19235 15.5627 5.353 15.2823 6.66373 15.2823C7.97447 15.2823 9.06508 15.5526 10.0656 16.1033C11.0662 16.6539 11.8466 17.4247 12.3969 18.4258C12.9473 19.427 13.2274 20.5782 13.2274 21.8697C13.2274 22.3502 13.1974 22.7807 13.1274 23.1711L13.1374 23.1411ZM9.74546 20.8786C9.72545 20.0176 9.41528 19.3168 8.80493 18.7963C8.19459 18.2757 7.45418 18.0154 6.57368 18.0154C5.74322 18.0154 5.04282 18.2657 4.4725 18.7762C3.90218 19.2768 3.55199 19.9776 3.43192 20.8786H9.74546Z"
                                         fill="#E26310"
@@ -295,8 +295,8 @@ export default function Header() {
                                         y2="500"
                                         gradientUnits="userSpaceOnUse"
                                     >
-                                        <stop offset="0.153846" stop-color="#61529D" />
-                                        <stop offset="1" stop-color="#CCC6E3" />
+                                        <stop offset="0.153846" stopColor="#61529D" />
+                                        <stop offset="1" stopColor="#CCC6E3" />
                                     </linearGradient>
                                     <clipPath id="clip0_934_985">
                                         <rect
