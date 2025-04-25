@@ -5,9 +5,9 @@ export default function Home() {
     return (
         <section className=" h-full text-black flex flex-col items-center justify-center overflow-y-auto flex-wrap">
             <div className="w-9/12 flex gap-2 items-center justify-center">
-                <div className="justify-items-center ">
+                <div className="flex flex-col items-center justify-center">
                     <Image
-                        src="../../images/logo.svg"
+                        src="/images/logo.svg"
                         alt="Ember AI logo"
                         width={468}
                         height={78}
