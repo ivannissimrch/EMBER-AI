@@ -1,0 +1,14 @@
+.markdownContainer ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    box-sizing: content-box;
+    padding-left: 40px;
+}
+
+.markdownContainer li {
+    box-sizing: content-box;
+}
+
+.markdownContainer p {
+    margin: 16px 0;
+}
