@@ -65,7 +65,7 @@ Ember AI was built using:
 
 ### Developers
 
--   Ivan Rebolledo Chavez (Developer): [GitHub](https://github.com/ivannissimrch) / [LinkedIn](https://www.linkedin.com/in/ivan-rebolledo-012b17244/)
+-   Ivan Rebolledo (Developer): [GitHub](https://github.com/ivannissimrch) / [LinkedIn](https://www.linkedin.com/in/ivan-rebolledo-012b17244/)
 -   Nate Kagnaw (Developer) : [GitHub](https://github.com/natnaelsisay) / [LinkedIn](https://www.linkedin.com/in/natnael-kagnaw/)
 -   Bryan Hoyem (Developer): [GitHub](https://github.com/bhoyem) / [LinkedIn](https://www.linkedin.com/in/bryanhoyem/)
 -   Kento Kanehira (Developer): [GitHub](https://github.com/kento-ix) / [LinkedIn](https://www.linkedin.com/in/kento-kanehira-ixx/)
